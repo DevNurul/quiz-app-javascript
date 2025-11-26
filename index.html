@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Quiz App</title>
+  </head>
+
+  <body
+    class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center p-4"
+  >
+    <!-- FIRST SCREEN -->
+    <div
+      id="first-screen"
+      class="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl max-w-md w-full text-center fade-in"
+    >
+      <div class="mb-8">
+        <i class="fas fa-brain text-6xl text-white mb-4"></i>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Quiz App</h1>
+        <p class="text-white/80 text-lg">
+          Test your knowledge with our fun quiz!
+        </p>
+      </div>
+
+      <button
+        id="start-btn"
+        class="bg-white text-purple-600 font-bold text-xl py-4 px-8 rounded-2xl hover:bg-purple-100 transform transition-all duration-300 hover:scale-105 pulse-glow w-full"
+      >
+        Start Quiz
+      </button>
+
+      <div class="mt-8 text-white/70">
+        <p><i class="fas fa-clock mr-2"></i>10 seconds per question</p>
+        <p><i class="fas fa-list-ol mr-2"></i>5 questions total</p>
+      </div>
+    </div>
+
+    <!-- SECOND SCREEN -->
+    <div
+      id="second-screen"
+      class="hidden max-w-2xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden slide-in"
+    >
+      <!-- Header with Score and Progress -->
+      <div
+        class="bg-gradient-to-r from-purple-600 to-indigo-600 p-6 text-white"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <div>
+            <h2 class="text-xl font-bold">
+              Question <span id="current-question">1</span>/<span
+                id="total-questions"
+                >5</span
+              >
+            </h2>
+          </div>
+          <div class="bg-white/20 rounded-xl py-2 px-4">
+            <span class="font-bold text-lg"
+              >Score: <span id="score">0</span></span
+            >
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-white/30 rounded-full h-3">
+          <div
+            id="progressBar"
+            class="bg-yellow-400 h-3 rounded-full progress-animation"
+            style="width: 0%"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Question Container -->
+      <div class="p-8">
+        <div class="mb-8">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-700">Question:</h3>
+            <div
+              class="flex items-center bg-purple-100 text-purple-700 py-1 px-3 rounded-full"
+            >
+              <i class="fas fa-clock mr-2"></i>
+              <span id="timerDisplay" class="font-bold">10s</span>
+            </div>
+          </div>
+          <div
+            class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border border-purple-100"
+          >
+            <h2 id="question-text" class="text-2xl font-medium text-gray-800">
+              <!-- JS will replace this text -->
+            </h2>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div id="options" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- JS will insert options here -->
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div
+        class="bg-gray-50 p-4 border-t border-gray-200 text-center text-gray-600"
+      >
+        <p id="bottom-text">Select the correct answer before time runs out!</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
